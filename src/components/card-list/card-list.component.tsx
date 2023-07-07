@@ -1,12 +1,12 @@
-import { Monster } from '../../models/monster';
 import './card-list.styles.css';
 import Card from '../card/card.component';
+import { Monster } from '../../App';
 
-interface Props {
+interface CardListProps {
   monsters: Monster[];
 }
 
-const CardList = ({ monsters }: Props) => {
+const CardList = ({ monsters }: CardListProps) => {
   return (
     <div className='card-list'>
       {monsters.map((monster) => {
@@ -15,20 +15,5 @@ const CardList = ({ monsters }: Props) => {
     </div>
   );
 };
-
-// interface State {}
-
-// class CardList extends Component<Props, State> {
-//   render(): ReactNode {
-//     const { monsters } = this.props;
-//     return (
-//       <div className='card-list'>
-//         {monsters.map((monster) => {
-//           return <Card monster={monster} key={monster.id} />;
-//         })}
-//       </div>
-//     );
-//   }
-// }
 
 export default CardList;
